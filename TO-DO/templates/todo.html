@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do List</title>
+
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='css/style.css')}}"
+    />
+  </head>
+  <body>
+    <div class="todo-container">
+      <div class="theme-toggle">
+        <label class="switch">
+          <input type="checkbox" id="darkModeToggle" />
+          <span class="slider round"></span>
+        </label>
+      </div>
+      <div class="name">
+        <span id="username">Welcome {{ current_user.username }}</span>
+      </div>
+      <h1 class="h1">📝 My To-Do List</h1>
+      <div class="input-section">
+        <input type="text" id="taskInput" placeholder="Add a new task..." />
+      </div>
+      <div class="bothButton">
+        <div class="btn-center">
+          <button id="addBtn">Add</button>
+        </div>
+
+        <div class="btn-left">
+          <button id="clearAllBtn" title="Clear All Tasks">🗑️</button>
+        </div>
+      </div>
+      <ol id="taskList"></ol>
+      <nav id="logout">
+        <a href="/">Logout</a>
+      </nav>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </body>
+</html>
